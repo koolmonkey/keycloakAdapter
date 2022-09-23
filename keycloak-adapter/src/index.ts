@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 8080;
+const port = 8080; // TODO: Добавить возможность получения через env
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
