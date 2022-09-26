@@ -5,6 +5,8 @@ services:
     image: jboss/keycloak
     env_file:
       - keycloak.env
+    ports:
+      - "8090:8080"
 
   adapter:
     build: ./keycloak-adapter/
