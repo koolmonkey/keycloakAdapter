@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "^4.17.14",
+    "@types/node": "^18.7.23",
     "body-parser": "^1.13.3",
     "cors": "^2.8.1",
     "express": "^4.18.1",
@@ -17,21 +18,34 @@
     "@types/express-session": "^1.17.5",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
-    "tsc-watch": "^5.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "*"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./src/",
+      "./build"
+    ],
+    "ext": "*",
+    "events": {
+      "restart": "yarn copy-files"
+    }
   },
   "scripts": {
     "build": "tsc",
     "start": "node .",
     "lint": "eslint --ext .js,.ts src",
-    "dev": "tsc-watch --onSuccess \"copy src/view dist/view\" --onSuccess \"node ./dist/index.js\"",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "dev": "nodemon src/index.ts",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
