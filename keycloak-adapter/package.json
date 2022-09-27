@@ -5,9 +5,16 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "^4.17.14",
-    "express": "^4.18.1"
+    "body-parser": "^1.13.3",
+    "cors": "^2.8.1",
+    "express": "^4.18.1",
+    "express-session": "^1.14.2",
+    "hogan-express": "^0.5.2",
+    "keycloak-connect": "^19.0.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express-session": "^1.17.5",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.0.1",
@@ -24,7 +31,7 @@
     "build": "tsc",
     "start": "node .",
     "lint": "eslint --ext .js,.ts src",
-    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "dev": "tsc-watch --onSuccess \"copy src/view dist/view\" --onSuccess \"node ./dist/index.js\"",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
