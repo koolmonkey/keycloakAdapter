@@ -12,4 +12,6 @@ EXPOSE 8080
 
 RUN ["yarn", "build"]
 
+COPY src/view dist/view
+
 CMD ["yarn", "start"]
