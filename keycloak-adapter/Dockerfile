@@ -12,4 +12,4 @@ EXPOSE 8080
 
 RUN ["yarn", "build"]
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
