@@ -55,6 +55,8 @@ app.use(session({
 // Additional configuration is read from keycloak.json file
 // installed from the Keycloak web console.
 
+// TODO: auth-server-url может быть разным для клиента и для адаптера
+
 const keycloak = new Keycloak({
   store: memoryStore,
 });
