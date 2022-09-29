@@ -1,6 +1,6 @@
 {
   "realm": "nodejs-example",
-  "auth-server-url": "http://localhost:8090/auth",
+  "auth-server-url": "http://localhost:8090",
   "ssl-required": "external",
   "clientId": "nodejs-connect"
 }
