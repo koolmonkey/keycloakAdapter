@@ -1,8 +1,9 @@
-version: '3.3'
+version: "3.3"
 
 services:
   auth:
-    image: jboss/keycloak
+    image: quay.io/keycloak/keycloak:19.0.2
+    command: start-dev
     env_file:
       - keycloak.env
     ports:
